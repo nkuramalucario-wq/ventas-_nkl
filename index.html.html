@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dibujos en venta de NKL - Tienda de Arte Único</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            margin: 0;
+            padding: 20px;
+            color: #333;
+        }
+        .header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+        .header h1 {
+            font-size: 2.5em;
+            color: #4a5568;
+            margin-bottom: 10px;
+        }
+        .header p {
+            font-size: 1.2em;
+            color: #718096;
+        }
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .art-piece {
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .art-piece:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+        }
+
+        /* IMÁGENES */
+        .art-image {
+            width: 100%;
+            height: 250px;
+            overflow: hidden;
+        }
+
+        .art-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.3s;
+        }
+
+        .art-piece:hover img {
+            transform: scale(1.1);
+        }
+
+        .art-info {
+            padding: 25px;
+        }
+        .art-title {
+            font-size: 1.4em;
+            font-weight: bold;
+            color: #2d3748;
+            margin-bottom: 10px;
+        }
+        .art-description {
+            color: #4a5568;
+            line-height: 1.5;
+            margin-bottom: 20px;
+        }
+        .price {
+            font-size: 1.8em;
+            font-weight: bold;
+            color: #38a169;
+            margin-bottom: 15px;
+        }
+        .buy-btn {
+            background: linear-gradient(45deg, #38a169, #48bb78);
+            color: white;
+            border: none;
+            padding: 12px 30px;
+            border-radius: 25px;
+            font-size: 1.1em;
+            cursor: pointer;
+            width: 100%;
+            transition: all 0.3s ease;
+        }
+        .buy-btn:hover {
+            transform: scale(1.05);
+            box-shadow: 0 5px 15px rgba(56, 161, 105, 0.4);
+        }
+        .footer {
+            text-align: center;
+            margin-top: 60px;
+            padding: 20px;
+            color: #718096;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>🖌️ Dibujos de NKL</h1>
+        <p>Cada trazo lleva una historia, un sentimiento único. Piezas originales llenas de emoción.</p>
+    </div>
+
+    <div class="gallery">
+
+        <!-- Gatito azul -->
+        <div class="art-piece">
+            <div class="art-image">
+                <img src="imagenes/kpop.jpg" akpop.jpglt="Gato azul de las guerreras K. Pop">
+            </div>
+            <div class="art-info">
+                <div class="art-title">Gato de la Guerrera K. Pop</div>
+                <div class="art-description">
+                    Un diseño adorable y lleno de personalidad. Perfecto para quienes aman a las Huntrix.
+                </div>
+                <div class="price">Q55</div>
+                <button class="buy-btn" onclick="comprar('Gato k.pop')">Comprar Ahora</button>
+            </div>
+        </div>
+
+        <!-- Batman -->
+        <div class="art-piece">
+            <div class="art-image">
+                <img src="imagenes/natman.jpg" alt="Batman">
+            </div>
+            <div class="art-info">
+                <div class="art-title">Caballero de la noche</div>
+                <div class="art-description">
+                    Inspirado en el icónico héroe. Un estilo fuerte y elegante que resalta carácter.
+                </div>
+                <div class="price">Q40</div>
+                <button class="buy-btn" onclick="comprar('Caballero de la noche')">Comprar Ahora</button>
+            </div>
+        </div>
+
+        <!-- Goku -->
+        <div class="art-piece">
+            <div class="art-image">
+                <img src="imagenes/goku.jpg" alt="Goku">
+            </div>
+            <div class="art-info">
+                <div class="art-title">Guerrero Saiyajin</div>
+                <div class="art-description">
+                    Intensidad y poder reflejados en cada trazo. Ideal para fans del anime.
+                </div>
+                <div class="price">Q100</div>
+                <button class="buy-btn" onclick="comprar('Guerrero Saiyajin')">Comprar Ahora</button>
+            </div>
+        </div>
+
+        <!-- Caricatura rosa -->
+        <div class="art-piece">
+            <div class="art-image">
+                <img src="imagenes/chopper.jpg" alt="Chopper">
+            </div>
+            <div class="art-info">
+                <div class="art-title">Tony Tony Chopper</div>
+                <div class="art-description">
+                    Un estilo colorido y creativo que transmite alegría y originalidad.
+                </div>
+                <div class="price">Q60</div>
+                <button class="buy-btn" onclick="comprar('Chopper')">Comprar Ahora</button>
+            </div>
+        </div>
+
+        <!-- Venom -->
+        <div class="art-piece">
+            <div class="art-image">
+                <img src="imagenes/venom spider.jpg" alt="Venom spider">
+            </div>
+            <div class="art-info">
+                <div class="art-title">Venom spider</div>
+                <div class="art-description">
+                    Un diseño impactante con tonos oscuros y mucha fuerza visual.
+                </div>
+                <div class="price">Q100</div>
+                <button class="buy-btn" onclick="comprar('Oscuridad Interior')">Comprar Ahora</button>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="footer">
+        <p>✨ Cada pieza es única y original. Envíos a todo Guatemala. <br>
+        Contacto: WhatsApp +502 5889 9192 | nkuramalucario@gmail.com</p>
+    </div>
+
+    <script>
+        function comprar(nombre) {
+            alert(Gracias  por tu interés en "${nombre}"! 🎉\n\nTe contactaremos pronto por WhatsApp para coordinar el pago y envío.\n\n¡Tu nueva pieza de arte está a un paso de ser tuya! 💖);
+    </script>
+</body>
+</html>
